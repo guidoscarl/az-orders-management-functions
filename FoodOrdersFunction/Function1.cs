@@ -1,24 +1,21 @@
 using System;
 using System.IO;
-using System.Text;
-using Microsoft.Azure.ServiceBus;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Azure.WebJobs.Extensions;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Microsoft.Azure.ServiceBus;
+using System.Text;
 
-namespace TechOrdersFunction
+namespace FoodOrdersFunction
 {
     public class Function1
     {
-        private readonly ILogger<Function1> _logger;
-
-        public Function1(ILogger<Function1> log)
-        {
-            _logger = log;
-        }
-
-        [FunctionName("TechInvoices")]
-        public void Run([ServiceBusTrigger("orderstopic", "TechSub", Connection = "connectionString")]Message mySbMsg, IBinder binder)
+        [FunctionName("FoodInvoices")]
+        public void Run([ServiceBusTrigger("orderstopic", "FoodSub", Connection = "connectionString")]Message mySbMsg, IBinder binder)
         {
             Console.WriteLine($"Processed order: {mySbMsg.UserProperties["orderCode"]}");
 

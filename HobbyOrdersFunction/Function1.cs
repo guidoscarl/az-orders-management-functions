@@ -6,7 +6,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 
-namespace TechOrdersFunction
+namespace HobbyOrdersFunction
 {
     public class Function1
     {
@@ -17,8 +17,8 @@ namespace TechOrdersFunction
             _logger = log;
         }
 
-        [FunctionName("TechInvoices")]
-        public void Run([ServiceBusTrigger("orderstopic", "TechSub", Connection = "connectionString")]Message mySbMsg, IBinder binder)
+        [FunctionName("Function1")]
+        public void Run([ServiceBusTrigger("orderstopic", "HobbySub", Connection = "connectionString")] Message mySbMsg, IBinder binder)
         {
             Console.WriteLine($"Processed order: {mySbMsg.UserProperties["orderCode"]}");
 
