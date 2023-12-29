@@ -1,25 +1,26 @@
-using System;
-using System.IO;
-using System.Text;
-using Azure.Messaging.ServiceBus;
-using Microsoft.Azure.ServiceBus;
+﻿using Azure.Messaging.ServiceBus;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace HobbyOrdersFunction
+namespace FoodOrdersFunction
 {
-    public class Function1
+    public class TechInvoices
     {
-        private readonly ILogger<Function1> _logger;
+        private readonly ILogger<TechInvoices> _logger;
 
-        public Function1(ILogger<Function1> log)
+        public TechInvoices(ILogger<TechInvoices> log)
         {
             _logger = log;
         }
 
-        [FunctionName("HobbyInvoices")]
-        public void Run([ServiceBusTrigger("orderstopic", "HobbySub", Connection = "serviceBus")] ServiceBusReceivedMessage mySbMsg, IBinder binder)
+        [FunctionName("TechInvoices")]
+        public void Run([ServiceBusTrigger("orderstopic", "TechSub", Connection = "serviceBus")] ServiceBusReceivedMessage mySbMsg, IBinder binder)
         {
             Console.WriteLine($"Processed order: {mySbMsg.ApplicationProperties["orderCode"]}");
 

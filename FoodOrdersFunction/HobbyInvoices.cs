@@ -1,19 +1,20 @@
-using System;
-using System.IO;
-using System.Text;
-using Azure.Messaging.ServiceBus;
-using Microsoft.Azure.ServiceBus;
+﻿using Azure.Messaging.ServiceBus;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace HobbyOrdersFunction
+namespace FoodOrdersFunction
 {
-    public class Function1
+    public class HobbyInvoices
     {
-        private readonly ILogger<Function1> _logger;
+        private readonly ILogger<HobbyInvoices> _logger;
 
-        public Function1(ILogger<Function1> log)
+        public HobbyInvoices(ILogger<HobbyInvoices> log)
         {
             _logger = log;
         }

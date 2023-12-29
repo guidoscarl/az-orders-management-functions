@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechOrdersFunction", "TechOrdersFunction\TechOrdersFunction.csproj", "{6C905598-7E8F-4B55-99C3-0917C4DD2D78}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrdersFunction", "FoodOrdersFunction\FoodOrdersFunction.csproj", "{0035E3D2-1EEE-44B3-9D53-C0FFD52E0DA2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HobbyOrdersFunction", "HobbyOrdersFunction\HobbyOrdersFunction.csproj", "{A3FE2DA9-CF6E-4F56-9E04-79C2CC18D2AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrdersInvoices", "FoodOrdersFunction\OrdersInvoices.csproj", "{0035E3D2-1EEE-44B3-9D53-C0FFD52E0DA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6C905598-7E8F-4B55-99C3-0917C4DD2D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C905598-7E8F-4B55-99C3-0917C4DD2D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C905598-7E8F-4B55-99C3-0917C4DD2D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C905598-7E8F-4B55-99C3-0917C4DD2D78}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0035E3D2-1EEE-44B3-9D53-C0FFD52E0DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0035E3D2-1EEE-44B3-9D53-C0FFD52E0DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0035E3D2-1EEE-44B3-9D53-C0FFD52E0DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0035E3D2-1EEE-44B3-9D53-C0FFD52E0DA2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3FE2DA9-CF6E-4F56-9E04-79C2CC18D2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3FE2DA9-CF6E-4F56-9E04-79C2CC18D2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3FE2DA9-CF6E-4F56-9E04-79C2CC18D2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3FE2DA9-CF6E-4F56-9E04-79C2CC18D2AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

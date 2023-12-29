@@ -3,6 +3,6 @@
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "connectionString": "Endpoint=sb://orders-management.servicebus.windows.net/;SharedAccessKeyName=ReadMessageAccessKey;SharedAccessKey=o9AKLdEE19IlRkZUwme+1b123EF4EedWo+ASbBnrE+w="
+    "serviceBus": "Endpoint=sb://orders-management.servicebus.windows.net/;SharedAccessKeyName=ReadMessageAccessKey;SharedAccessKey=o9AKLdEE19IlRkZUwme+1b123EF4EedWo+ASbBnrE+w="
   }
 }

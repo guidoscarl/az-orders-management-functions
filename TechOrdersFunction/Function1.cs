@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Text;
+using Azure.Messaging.ServiceBus;
 using Microsoft.Azure.ServiceBus;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
@@ -18,19 +19,20 @@ namespace TechOrdersFunction
         }
 
         [FunctionName("TechInvoices")]
-        public void Run([ServiceBusTrigger("orderstopic", "TechSub", Connection = "connectionString")]Message mySbMsg, IBinder binder)
+        public void Run([ServiceBusTrigger("orderstopic", "TechSub", Connection = "serviceBus")] ServiceBusReceivedMessage mySbMsg, IBinder binder)
         {
-            Console.WriteLine($"Processed order: {mySbMsg.UserProperties["orderCode"]}");
+            Console.WriteLine($"Processed order: {mySbMsg.ApplicationProperties["orderCode"]}");
 
             var sb = new StringBuilder();
             sb.AppendLine($"Product Name: {Encoding.UTF8.GetString(mySbMsg.Body)}");
-            sb.AppendLine($"Price: {mySbMsg.UserProperties["price"]}");
-            sb.AppendLine($"Username: {mySbMsg.UserProperties["userName"]}");
+            sb.AppendLine($"Price: {mySbMsg.ApplicationProperties["price"]}");
+            sb.AppendLine($"Username: {mySbMsg.ApplicationProperties["userName"]}");
 
-            var outboundBlob = new BlobAttribute($"invoices/{mySbMsg.UserProperties["orderCode"]}", FileAccess.Write);
+            var outboundBlob = new BlobAttribute($"invoices/{mySbMsg.ApplicationProperties["orderCode"]}", FileAccess.Write);
             using var writer = binder.Bind<TextWriter>(outboundBlob);
 
             writer.WriteLine(sb.ToString());
+            _logger.LogInformation(sb.ToString());
         }
     }
 }
